@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Node (server.js is committed; only ignore deps + build artifacts)
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+
+# Vercel
+.vercel/
+
+# Local reference material (not part of the deployable site)
+references/
+*.zip
+
+# Logs / env
+*.log
+.env
+.env.local
+.env.*.local
