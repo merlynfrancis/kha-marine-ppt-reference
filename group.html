@@ -84,9 +84,9 @@
           <a href="about.html">About</a>
           <a href="capability.html">Capability</a>
           <a href="manufacturing.html">Manufacturing</a>
-          <a href="models.html">Models</a>
           <a href="services.html">Services</a>
           <a href="maintenance.html">Maintenance</a>
+          <a href="models.html">Gallery</a>
           <a href="projects.html">Projects</a>
           <a href="group.html" aria-current="page">Group</a>
         </nav>
@@ -120,9 +120,9 @@
         <a href="about.html">About</a>
         <a href="capability.html">Capability</a>
         <a href="manufacturing.html">Manufacturing</a>
-        <a href="models.html">Models</a>
         <a href="services.html">Services</a>
         <a href="maintenance.html">Maintenance</a>
+        <a href="models.html">Gallery</a>
         <a href="projects.html">Projects</a>
         <a href="group.html" aria-current="page">Group</a>
       </nav>
@@ -265,7 +265,7 @@
               <li><a href="manufacturing.html">Manufacturing</a></li>
               <li><a href="capability.html">Capability</a></li>
               <li><a href="group.html" aria-current="page">Our Group</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="models.html">Gallery</a></li>
               <li><a href="projects.html">Projects</a></li>
             </ul>
           </div>
@@ -273,7 +273,7 @@
             <h5>Services</h5>
             <ul>
               <li><a href="services.html">All Services</a></li>
-              <li><a href="models.html">Boat Models</a></li>
+              <li><a href="models.html">Gallery</a></li>
               <li><a href="maintenance.html">Maintenance</a></li>
               <li><a href="services.html">Refits &amp; Repair</a></li>
             </ul>
@@ -300,6 +300,35 @@
     <script src="js/main.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script>
+      // Convert near-white pixels in an <img> to transparent at runtime,
+      // replacing the img src with a transparent PNG data URL. Used for
+      // logos whose source files have an opaque white background that
+      // can't be hidden via CSS filters/blend modes on a dark theme.
+      function khaStripWhiteBg(img, threshold) {
+        threshold = threshold || 230;
+        if (!img.complete) {
+          img.addEventListener("load", function () { khaStripWhiteBg(img, threshold); }, { once: true });
+          return;
+        }
+        try {
+          var w = img.naturalWidth, h = img.naturalHeight;
+          if (!w || !h) return;
+          var canvas = document.createElement("canvas");
+          canvas.width = w; canvas.height = h;
+          var ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0);
+          var imgData = ctx.getImageData(0, 0, w, h);
+          var d = imgData.data;
+          for (var i = 0; i < d.length; i += 4) {
+            if (d[i] >= threshold && d[i+1] >= threshold && d[i+2] >= threshold) {
+              d[i+3] = 0;
+            }
+          }
+          ctx.putImageData(imgData, 0, 0);
+          img.src = canvas.toDataURL("image/png");
+        } catch (e) { /* CORS or canvas issue — leave original */ }
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
         var grid = document.querySelector("[data-group-grid]");
         if (!grid || !window.KHA || !window.KHA.groupCompanies) return;
@@ -323,6 +352,22 @@
             );
           })
           .join("");
+
+        // Strip white backgrounds from logos that ship with opaque white bg
+        // Per-logo threshold — tuned so pure/near-pure white background
+        // is removed but the actual logo content (which has at least
+        // slight tonal variation) is preserved.
+        var stripTargets = [
+          { slug: "serva", threshold: 240 },
+          { slug: "kha-marine", threshold: 248 },
+          { slug: "mana-advisory", threshold: 245 },
+          { slug: "suofeiya", threshold: 245 }
+        ];
+        stripTargets.forEach(function (t) {
+          var img = document.querySelector("#" + t.slug + " .group-card__logo img");
+          if (img) khaStripWhiteBg(img, t.threshold);
+        });
+
         if (window.KHA.animations) {
           grid.querySelectorAll(".reveal").forEach(function (el) {
             window.KHA.animations.observe(el);

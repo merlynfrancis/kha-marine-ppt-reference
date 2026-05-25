@@ -37,7 +37,7 @@ window.KHA.models = [
     meaning: "The hunting falcon — endurance, range, unwavering focus.",
     category: "patrol",
     // categoryLabel: "Patrol / Security",
-    size: " 40ft | 45ft | 50ft | 55ft | 60ft",
+    size: "40ft | 45ft | 50ft | 55ft | 60ft",
     use: "Government deployment, offshore patrol",
     description:
       "Reinforced composite construction with a long-range patrol configuration. FLIR-ready electrical bay, navigation suite integration, and operational endurance for extended Gulf missions.",
@@ -72,30 +72,10 @@ window.KHA.models = [
       "Custom interior fit-out with quilted upholstery, teak detailing, and generous beam. The composite hull is tuned for stable Gulf cruising and overnight capability.",
     image: "assets/images/pradator.png",
   },
-  {
-    id: "Unnamed Molds",
-    name: "Other Molds",
-    // subtitle: "Fishing · Sport / Inshore",
-    arabic: "سنبوق",
-    meaning:
-      "The classic Gulf pearling craft — a heritage name for a modern fishing platform.",
-    // category: "fishing",
-    // categoryLabel: "Fishing",
-    size: "Available Upon Request",
-    use: "Sport fishing, inshore / offshore",
-    description:
-      "Self-bailing fiberglass deck, rod-ready layout, raised T-top, and a hull designed for chop and long days at sea. Built for serious sport and commercial fishing.",
-    image: "assets/images/unnamed mold.png",
-  },
 ];
 
 window.KHA.modelCategories = [
-  { id: "all", label: "Existing Molds" },
-  // { id: "Catamaran", label: "Catamaran" },
-  // { id: "Navigator Monohull", label: "Navigator Monohull" },
-  // { id: "Falcon Monohull", label: "Falcon Monohull" },
-  // { id: "Predator", label: "Predator" },
-  // { id: "Unnamed Molds", label: "Other Boats" },
+  { id: "all", label: "Speciality" },
 ];
 
 /* ---------- Services ---------------------------------------------------- */

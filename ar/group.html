@@ -87,9 +87,9 @@
           <a href="about.html">من نحن</a>
           <a href="capability.html">القدرة</a>
           <a href="manufacturing.html">التصنيع</a>
-          <a href="models.html">النماذج</a>
           <a href="services.html">الخدمات</a>
           <a href="maintenance.html">الصيانة</a>
+          <a href="models.html">المعرض</a>
           <a href="projects.html">المشاريع</a>
           <a href="group.html" aria-current="page">المجموعة</a>
         </nav>
@@ -123,9 +123,9 @@
         <a href="about.html">من نحن</a>
         <a href="capability.html">القدرة</a>
         <a href="manufacturing.html">التصنيع</a>
-        <a href="models.html">النماذج</a>
         <a href="services.html">الخدمات</a>
         <a href="maintenance.html">الصيانة</a>
+        <a href="models.html">المعرض</a>
         <a href="projects.html">المشاريع</a>
         <a href="group.html" aria-current="page">المجموعة</a>
       </nav>
@@ -262,7 +262,7 @@
               <li><a href="manufacturing.html">التصنيع</a></li>
               <li><a href="capability.html">القدرة</a></li>
               <li><a href="group.html" aria-current="page">مجموعتنا</a></li>
-              <li><a href="gallery.html">المعرض</a></li>
+              <li><a href="models.html">المعرض</a></li>
               <li><a href="projects.html">المشاريع</a></li>
             </ul>
           </div>
@@ -270,7 +270,7 @@
             <h5>الخدمات</h5>
             <ul>
               <li><a href="services.html">جميع الخدمات</a></li>
-              <li><a href="models.html">نماذج القوارب</a></li>
+              <li><a href="models.html">المعرض</a></li>
               <li><a href="maintenance.html">الصيانة</a></li>
               <li><a href="services.html">التجديد والإصلاح</a></li>
             </ul>
@@ -297,6 +297,31 @@
     <script src="../js/main.js" defer></script>
     <script src="../js/animations.js" defer></script>
     <script>
+      function khaStripWhiteBg(img, threshold) {
+        threshold = threshold || 230;
+        if (!img.complete) {
+          img.addEventListener("load", function () { khaStripWhiteBg(img, threshold); }, { once: true });
+          return;
+        }
+        try {
+          var w = img.naturalWidth, h = img.naturalHeight;
+          if (!w || !h) return;
+          var canvas = document.createElement("canvas");
+          canvas.width = w; canvas.height = h;
+          var ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0);
+          var imgData = ctx.getImageData(0, 0, w, h);
+          var d = imgData.data;
+          for (var i = 0; i < d.length; i += 4) {
+            if (d[i] >= threshold && d[i+1] >= threshold && d[i+2] >= threshold) {
+              d[i+3] = 0;
+            }
+          }
+          ctx.putImageData(imgData, 0, 0);
+          img.src = canvas.toDataURL("image/png");
+        } catch (e) { /* leave original */ }
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
         var grid = document.querySelector("[data-group-grid-ar]");
         if (!grid || !window.KHA || !window.KHA.groupCompaniesAr) return;
@@ -320,6 +345,18 @@
             );
           })
           .join("");
+
+        var stripTargets = [
+          { slug: "serva", threshold: 240 },
+          { slug: "kha-marine", threshold: 248 },
+          { slug: "mana-advisory", threshold: 245 },
+          { slug: "suofeiya", threshold: 245 }
+        ];
+        stripTargets.forEach(function (t) {
+          var img = document.querySelector("#" + t.slug + " .group-card__logo img");
+          if (img) khaStripWhiteBg(img, t.threshold);
+        });
+
         if (window.KHA.animations) {
           grid.querySelectorAll(".reveal").forEach(function (el) {
             window.KHA.animations.observe(el);
