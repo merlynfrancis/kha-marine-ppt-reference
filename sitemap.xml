@@ -67,14 +67,6 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.khamarine.ae/ar/gallery.html" />
   </url>
   <url>
-    <loc>https://www.khamarine.ae/group.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.khamarine.ae/group.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.khamarine.ae/ar/group.html" />
-  </url>
-  <url>
     <loc>https://www.khamarine.ae/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -144,14 +136,6 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.khamarine.ae/gallery.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://www.khamarine.ae/ar/gallery.html" />
-  </url>
-  <url>
-    <loc>https://www.khamarine.ae/ar/group.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.khamarine.ae/group.html" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.khamarine.ae/ar/group.html" />
   </url>
   <url>
     <loc>https://www.khamarine.ae/ar/contact.html</loc>

@@ -115,7 +115,6 @@
           <a href="maintenance.html">Maintenance</a>
           <a href="models.html">Gallery</a>
           <a href="projects.html">Projects</a>
-          <a href="group.html">Group</a>
         </nav>
 
         <div class="nav-actions">
@@ -204,7 +203,6 @@
         <a href="maintenance.html">Maintenance</a>
         <a href="models.html">Gallery</a>
         <a href="projects.html">Projects</a>
-        <a href="group.html">Group</a>
       </nav>
 
       <div class="mobile-drawer__actions">
@@ -591,8 +589,8 @@
             </div>
             <p class="lede reveal" data-delay="2">
               Advanced fiberglass. Steel engineering. Integrated water
-              transport. KHA Marine operates across the full maritime spectrum
-              — leisure, industrial, urban, emergency.
+              transport. KHA Marine operates across the full maritime spectrum —
+              leisure, industrial, urban, emergency.
             </p>
           </div>
 
@@ -665,35 +663,6 @@
         </div>
       </section>
 
-      <!-- ========== PART OF OUR GROUP — STATIC LOGO STRIP ========== -->
-      <section class="section section-tight" aria-label="Part of our group">
-        <div class="wrap">
-          <p
-            class="eyebrow reveal"
-            style="justify-content: center; display: flex"
-          >
-            Part of Our Group
-          </p>
-          <div class="group-strip reveal" data-delay="1" data-group-strip></div>
-          <p
-            class="reveal"
-            data-delay="2"
-            style="
-              text-align: center;
-              color: var(--text-muted);
-              font-size: var(--fs-sm);
-              max-width: 60ch;
-              margin: var(--sp-5) auto 0;
-            "
-          >
-            KHA Marine is one of seven companies in our group —
-            <a href="group.html" style="color: var(--accent)"
-              >meet them all →</a
-            >
-          </p>
-        </div>
-      </section>
-
       <!-- ========== CTA BLOCK ========== -->
       <section class="section">
         <div class="wrap">
@@ -753,7 +722,6 @@
               <li><a href="about.html">About</a></li>
               <li><a href="manufacturing.html">Manufacturing</a></li>
               <li><a href="capability.html">Capability</a></li>
-              <li><a href="group.html">Our Group</a></li>
               <li><a href="models.html">Gallery</a></li>
               <li><a href="projects.html">Projects</a></li>
             </ul>
@@ -798,31 +766,5 @@
     <script src="js/main.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/hero-canvas.js" defer></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var strip = document.querySelector("[data-group-strip]");
-        if (!strip || !window.KHA || !window.KHA.groupCompanies) return;
-        strip.innerHTML = window.KHA.groupCompanies
-          .map(function (c) {
-            var inner = c.logo
-              ? '<img src="' +
-                c.logo +
-                '" alt="' +
-                c.name +
-                ' logo" loading="lazy" decoding="async" />'
-              : '<span class="group-strip__text">' + c.name + "</span>";
-            return (
-              '<a href="group.html#' +
-              c.slug +
-              '" class="group-strip__item" aria-label="' +
-              c.name +
-              '">' +
-              inner +
-              "</a>"
-            );
-          })
-          .join("");
-      });
-    </script>
   </body>
 </html>

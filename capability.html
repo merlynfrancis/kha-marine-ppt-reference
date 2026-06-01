@@ -141,7 +141,6 @@
           <a href="maintenance.html">Maintenance</a>
           <a href="models.html">Gallery</a>
           <a href="projects.html">Projects</a>
-          <a href="group.html">Group</a>
         </nav>
         <div class="nav-actions">
           <div class="lang-switch" role="group" aria-label="Language">
@@ -227,7 +226,6 @@
         <a href="maintenance.html">Maintenance</a>
         <a href="models.html">Gallery</a>
         <a href="projects.html">Projects</a>
-        <a href="group.html">Group</a>
       </nav>
       <div class="mobile-drawer__actions">
         <a href="contact.html" class="btn btn--primary">Request Quote</a>
@@ -406,7 +404,7 @@
           <div class="split split--feature">
             <div class="split-media reveal">
               <img
-                src="assets/images/barge image.webp"
+                src="assets/images/division-2.png"
                 alt="KHA Marine steel barge built for industrial duty cycles"
                 loading="lazy"
                 decoding="async"
@@ -567,46 +565,6 @@
         </div>
       </section>
 
-      <!-- ========== PART OF A LARGER GROUP ========== -->
-      <section class="section" style="background: var(--surface)">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <span class="eyebrow reveal">Part of a Larger Group</span>
-              <h2 class="reveal" data-delay="1">
-                KHA Marine is one division of a <em>multi-vertical group.</em>
-              </h2>
-            </div>
-            <p class="lede reveal" data-delay="2">
-              Maritime engineering. Advisory. Interior design. Smart-building
-              technology. Each company in our group delivers its own discipline
-              — together we deliver complete project capability.
-            </p>
-          </div>
-
-          <div class="group-strip reveal" data-delay="1" data-group-strip></div>
-
-          <div
-            class="row"
-            style="margin-top: var(--sp-7); justify-content: center"
-          >
-            <a href="group.html" class="btn btn--primary">
-              Meet the Group
-              <svg
-                class="arrow"
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                aria-hidden="true"
-              >
-                <path d="M2 8h12M9 3l5 5-5 5" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <!-- ========== CTA ========== -->
       <!-- ========== CTA ========== -->
       <section class="section">
@@ -653,7 +611,6 @@
               <li>
                 <a href="capability.html" aria-current="page">Capability</a>
               </li>
-              <li><a href="group.html">Our Group</a></li>
               <li><a href="models.html">Gallery</a></li>
               <li><a href="projects.html">Projects</a></li>
             </ul>
@@ -712,31 +669,6 @@
                 item.body +
                 "</p>" +
                 "</article>"
-              );
-            })
-            .join("");
-        }
-
-        // Group logo strip
-        var strip = document.querySelector("[data-group-strip]");
-        if (strip && window.KHA && window.KHA.groupCompanies) {
-          strip.innerHTML = window.KHA.groupCompanies
-            .map(function (c) {
-              var inner = c.logo
-                ? '<img src="' +
-                  c.logo +
-                  '" alt="' +
-                  c.name +
-                  ' logo" loading="lazy" decoding="async" />'
-                : '<span class="group-strip__text">' + c.name + "</span>";
-              return (
-                '<a href="group.html#' +
-                c.slug +
-                '" class="group-strip__item" aria-label="' +
-                c.name +
-                '">' +
-                inner +
-                "</a>"
               );
             })
             .join("");

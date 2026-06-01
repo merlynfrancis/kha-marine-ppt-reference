@@ -139,7 +139,6 @@
           <a href="maintenance.html">الصيانة</a>
           <a href="models.html">المعرض</a>
           <a href="projects.html">المشاريع</a>
-          <a href="group.html">المجموعة</a>
         </nav>
         <div class="nav-actions">
           <div class="lang-switch" role="group" aria-label="اللغة">
@@ -229,7 +228,6 @@
         <a href="maintenance.html">الصيانة</a>
         <a href="models.html">المعرض</a>
         <a href="projects.html">المشاريع</a>
-        <a href="group.html">المجموعة</a>
       </nav>
       <div class="mobile-drawer__actions">
         <a href="contact.html" class="btn btn--primary">اطلب عرض سعر</a>
@@ -546,46 +544,6 @@
         </div>
       </section>
 
-      <section class="section" style="background: var(--surface)">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <span class="eyebrow reveal">جزء من مجموعة أكبر</span>
-              <h2 class="reveal" data-delay="1">
-                كي إتش إيه مارين هي أحد أقسام <em>مجموعة متعددة المجالات.</em>
-              </h2>
-            </div>
-            <p class="lede reveal" data-delay="2">
-              هندسة بحرية. استشارات. تصميم داخلي. تقنية مباني ذكية. كل شركة في
-              مجموعتنا تقدّم تخصصها — معًا نقدّم قدرة مشاريع متكاملة.
-            </p>
-          </div>
-          <div
-            class="group-strip reveal"
-            data-delay="1"
-            data-group-strip-ar
-          ></div>
-          <div
-            class="row"
-            style="margin-top: var(--sp-7); justify-content: center"
-          >
-            <a href="group.html" class="btn btn--primary">
-              تعرّف على المجموعة
-              <svg
-                class="arrow"
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                aria-hidden="true"
-              >
-                <path d="M2 8h12M9 3l5 5-5 5" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section class="section">
         <div class="wrap">
           <div class="cta-block reveal">
@@ -625,7 +583,6 @@
               <li><a href="about.html">من نحن</a></li>
               <li><a href="manufacturing.html">التصنيع</a></li>
               <li><a href="capability.html" aria-current="page">القدرة</a></li>
-              <li><a href="group.html">مجموعتنا</a></li>
               <li><a href="models.html">المعرض</a></li>
               <li><a href="projects.html">المشاريع</a></li>
             </ul>
@@ -685,29 +642,6 @@
                 item.body +
                 "</p>" +
                 "</article>"
-              );
-            })
-            .join("");
-        }
-        var strip = document.querySelector("[data-group-strip-ar]");
-        if (strip && window.KHA && window.KHA.groupCompaniesAr) {
-          strip.innerHTML = window.KHA.groupCompaniesAr
-            .map(function (c) {
-              var inner = c.logo
-                ? '<img src="../' +
-                  c.logo +
-                  '" alt="شعار ' +
-                  c.name +
-                  '" loading="lazy" decoding="async" />'
-                : '<span class="group-strip__text">' + c.name + "</span>";
-              return (
-                '<a href="group.html#' +
-                c.slug +
-                '" class="group-strip__item" aria-label="' +
-                c.name +
-                '">' +
-                inner +
-                "</a>"
               );
             })
             .join("");

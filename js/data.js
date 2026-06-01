@@ -74,9 +74,7 @@ window.KHA.models = [
   },
 ];
 
-window.KHA.modelCategories = [
-  { id: "all", label: "Speciality" },
-];
+window.KHA.modelCategories = [{ id: "all", label: "Speciality" }];
 
 /* ---------- Services ---------------------------------------------------- */
 window.KHA.services = [
@@ -97,6 +95,11 @@ window.KHA.services = [
   },
   {
     num: "04",
+    title: "Boat Fit-Out",
+    body: "Encompasses installing structural bulkheads, interior cabinetry, plumbing, electrical systems, and navigation hardware.",
+  },
+  {
+    num: "05",
     title: "Refits & Upgrades",
     body: "Hull refinishing, deck rework, electrical re-commissioning, layout reconfiguration, and full re-fit-out.",
   },
@@ -106,27 +109,27 @@ window.KHA.services = [
     body: "Structural fiberglass and gelcoat repair, impact damage assessment, lamination correction, and water-ingress recovery.",
   },
   {
-    num: "06",
+    num: "07",
     title: "Marine Electrical",
     body: "Wiring inspections, navigation electronics, lighting, communications, and 12/24V system support.",
   },
   {
-    num: "07",
+    num: "08",
     title: "Mechanical Coordination",
     body: "Engine, drive, steering, and fuel-system coordination with trusted mechanical partners.",
   },
   {
-    num: "08",
+    num: "09",
     title: "Fleet Support",
     body: "Multi-vessel maintenance and uptime programs for government, commercial, and operational fleets.",
   },
   {
-    num: "09",
+    num: "10",
     title: "Marine Consultation",
     body: "Hull selection, design review, build planning, and long-term operational guidance for marine programs.",
   },
   {
-    num: "10 · Upon Request",
+    num: "11 · Upon Request",
     title: "Steel Vessel Production",
     body: "Regional coastal and offshore projects continue to drive demand for steel vessels such as landing crafts, barges, and support craft. A production-focused model enables scalable delivery of durable, project-ready marine assets for infrastructure and logistics operations.",
   },
@@ -589,8 +592,7 @@ window.KHA.groupCompaniesAr = [
     slug: "buildtech-pro",
     name: "بيلد-تك برو",
     discipline: "تقنية البناء",
-    descriptor:
-      "منتجات تقنية بناء متخصصة وأنظمة إنشاءات متكاملة.",
+    descriptor: "منتجات تقنية بناء متخصصة وأنظمة إنشاءات متكاملة.",
     bio: "توزع بيلد-تك برو منتجات تقنية البناء المتخصصة وأنظمة الإنشاءات المتكاملة — دعم المقاولين والمطورين بحلول مُهندَسة للإنشاءات الحرجة الأداء.",
     logo: "assets/logos/group/buildtech-pro.svg",
     url: null,
