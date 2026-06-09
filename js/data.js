@@ -16,20 +16,6 @@ window.SEVEN77 = window.SEVEN77 || window.KHA;
    ----------------------------------------------------------------------- */
 window.KHA.models = [
   {
-    id: "Catamaran",
-    name: "Catamaran",
-    // subtitle: "Patrol · Rapid Response",
-    arabic: "شاهين",
-    meaning: "The Arabian falcon — speed, precision, command of the sky.",
-    category: "patrol",
-    // categoryLabel: "Patrol / Security",
-    size: "45ft | 50ft | 55ft | 60ft",
-    use: "Coast guard, security, rapid response",
-    description:
-      "High-strength fiberglass patrol hull engineered for sustained Gulf operations. Deep-V planing geometry, hardened deck, and command-grade systems integration.",
-    image: "assets/images/catamaran 40ft.png",
-  },
-  {
     id: "Navigator Monohull",
     name: "Navigator Monohull",
     // subtitle: "Patrol · Offshore Command",
